@@ -15,7 +15,7 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['id_role'])) {
 };
 
 $SelectArticle = $BDD->query( 'SELECT *  FROM article ORDER BY id_article DESC Limit 4');
-$Selectvente = $BDD->query( 'SELECT *  FROM article ORDER BY id_article DESC Limit 8');
+$Selectvente = $BDD->query( 'SELECT *  FROM vente ORDER BY Id_Vente DESC Limit 8');
 
 ?>
 
@@ -84,16 +84,16 @@ include ('asset/Component/Header.php');
                         while($vente = $Selectvente->fetch()){
                             ?>
                             <div class="box">
-                                <img src="asset/img/article/<?= $vente['urlphoto']?>" alt="">
+                                <img src="asset/img/vente/<?= $vente['photo']?>" alt="">
                                 <div class="row">
                                     <div class="col">
-                                <div class="titrea mb-2"><?=$vente['modèle'] ?></div>
+                                <div class="titrea mb-2"><?=$vente['modele'] ?></div>
                                     </div>
                                     <div class="col text-end">
-                                        <div class="titrea mb-2"><?=$vente['prix_vente']$?></div>
+                                        <div class="titrea mb-2"><?=$vente['prix_vente']?>$</div>
                                     </div>
                                 </div>
-                                <a id="articlev2" href="afficher_article.php?id_article=<?=$vente['id_article']?>">voir plus</a>
+                                <a id="articlev2" href="afficher_article.php?id_article=<?=$vente['Id_Vente']?>">voir plus</a>
                             </div>
                             <?php
                         }
