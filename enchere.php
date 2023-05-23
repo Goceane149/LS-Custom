@@ -32,8 +32,8 @@ $Selectvente = $BDD->query( 'SELECT *  FROM vente ORDER BY id_vente DESC');
 <?php
 include ('asset/Component/Header.php');
 ?>
-<section id="vente">
-    <img src="asset/img/background2.png" class="d-block w-100 " alt="equipe1">
+<section id="enchere">
+    <img src="asset/img/background3.png" class="d-block w-100 " alt="equipe1">
 </section>
 
 <section id="vente2">
@@ -57,7 +57,7 @@ include ('asset/Component/Header.php');
                                         <div class="titrea mb-2"><?=$vente['prix_vente'] ?>$</div>
                                     </div>
                                 </div>
-                                <a id="articlev" href="afficher_vente.php?Id_Vente=<?=$vente['Id_Vente']?>">voir plus</a>
+                                <a id="articlev" href="afficher_article.php?id_article=<?=$vente['Id_Vente']?>">voir plus</a>
                             </div>
                             <?php
                         }

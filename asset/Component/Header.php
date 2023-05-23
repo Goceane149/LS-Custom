@@ -45,13 +45,13 @@ $id_role = $BDD->query('SELECT id_role FROM `role`');
                 $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
                 ?>
                 <div class="d-flex justify-content-center">
-                    <img class="rounded-circle d-block w-50"  src="assets/images/utilisateur/<?=$fetch_profile['photo']?>">
+                    <img class="rounded-circle d-block w-50"  src="asset/img/utilisateur/<?=$fetch_profile['imgprofil']?>">
                 </div>
                 <!-- on affiche le pseudo de l'utilisateur connecté -->
-                <p class="text-center"><span><?= $fetch_profile["pseudo"]; ?></span></p>
+                <p class="text-center"><span><?= $fetch_profile["Prenom"]; ?> <?= $fetch_profile["Nom"];?></span></p>
                 <!-- s'affichent alors les boutons de modification et de déconnexion -->
                 <a href="modifier.php" class="option-btn">Modifier</a>
-                <a href="components/deconnexion.php" class="delete-btn" onclick="return confirm('Voulez-vous vous déconnecter ?');">Se déconnecter</a>
+                <a href="deconnexion.php" class="delete-btn" onclick="return confirm('Voulez-vous vous déconnecter ?');">Se déconnecter</a>
                 <?php
             } else {
                 ?>

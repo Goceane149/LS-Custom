@@ -272,13 +272,112 @@ h1{
 }
 footer{
     background: black;
-    color: var(--jaune);
-    border-top: var(--jaune) solid 2px;
+    color: var(--black);
+    border-top: var(--black) solid 2px;
 }
 footer a {
     text-decoration: none;
-    color: var(--jaune) !important;
+    color: var(--black) !important;
 }
+
+.form-container form {
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    max-width: 50rem;
+    border: var(--border);
+}
+
+.form-container form#register small{
+    font-size: 1.2rem;
+}
+
+.form-container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-color);
+}
+
+.form-container form{
+    padding:2rem;
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    border-radius: .5rem;
+    max-width: 50rem;
+    border:var(--borderblack);
+}
+
+.form-container form label{
+    font-size: 1.7rem;
+    text-align: left;
+    padding: 1rem;
+}
+
+.form-container form h3{
+    text-align: center;
+    color:var(--black);
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.form-container form p{
+    font-size: 1.8rem;
+    padding: .9rem;
+    color:var(--black);
+    border-radius: .5rem;
+}
+
+.form-container form p span{
+    color:var(--black);
+}
+
+.form-container form a{
+    color: white;
+}
+
+.form-container form a:hover{
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.form-container form .box{
+    width: 100%;
+    margin:1rem 0;
+    border-radius: .5rem;
+    background-color: var(--light-bg);
+    padding:1.4rem;
+    font-size: 1.8rem;
+    color:var(--black);
+}
+
+.btn {
+    background-color: var(--black);
+}
+
+
+.btn,
+.delete-btn,
+.option-btn{
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: .5rem;
+    padding:1rem 3rem;
+    font-size: 1.7rem;
+    color:var(--white);
+    cursor: pointer;
+    text-align: center;
+}
+
+
+
+
+
+
+
 
 @media (max-width:768px){
 

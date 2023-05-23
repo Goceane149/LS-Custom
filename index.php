@@ -5,13 +5,10 @@ include 'asset/Component/BDD.php';
 session_start();
 
 //si l'ulisateur est connecté on renvoie ses identifiants sinon ça reste vide
-if (isset($_SESSION['id_user']) && isset($_SESSION['id_role'])) {
-    $user_id = $_SESSION['id_user'];
-    $role_id = $_SESSION['id_role'];
-
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
 } else {
     $user_id = '';
-    $role_id = '';
 };
 
 $SelectArticle = $BDD->query( 'SELECT *  FROM article ORDER BY id_article DESC Limit 4');
