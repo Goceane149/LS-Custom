@@ -13,7 +13,7 @@ if (isset($_SESSION['user_id'])) {
 };
 
 
-$Selectvente = $BDD->query( 'SELECT *  FROM vente ORDER BY id_vente DESC');
+$Selectenchere = $BDD->query( 'select * from enchere ORDER BY Id_enchere DESC');
 
 ?>
 
@@ -26,7 +26,7 @@ $Selectvente = $BDD->query( 'SELECT *  FROM vente ORDER BY id_vente DESC');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="asset/css/style.css">
     <link rel="shortcut icon" type="image/png" href="assets/design/favicon.png" />
-    <title>LS Custom - Vente </title>
+    <title>LS Custom - Enchère </title>
 </head>
 <body>
 <?php
@@ -41,23 +41,22 @@ include ('asset/Component/Header.php');
         <div class="row">
             <div class="col">
                 <section class="articles_publiées text-white">
-                    <h1 class="titre text-center mt-4">Les Dernières Ventes</h1>
+                    <h1 class="titre text-center mt-4">Les Dernières Enchères</h1>
                     <hr class="white mx-auto">
                     <div class="box-container">
                         <?php
-                        while($vente = $Selectvente->fetch()){
+                        while($enchere = $Selectenchere->fetch()){
                             ?>
                             <div class="boxa">
-                                <img src="asset/img/vente/<?= $vente['photo']?>" alt="">
+                                <img src="asset/img/vente/<?= $enchere['photo']?>" alt="">
                                 <div class="row">
                                     <div class="col">
-                                        <div class="titrea mb-2"><?=$vente['modele'] ?></div>
+                                        <div class="titrea mb-2"><?=$enchere['modele'] ?></div>
                                     </div>
                                     <div class="col text-end">
-                                        <div class="titrea mb-2"><?=$vente['prix_vente'] ?>$</div>
+                                        <div class="titrea mb-2"><?=$enchere['prix_vente'] ?>$</div>
                                     </div>
                                 </div>
-                                <a id="articlev" href="afficher_article.php?id_article=<?=$vente['Id_Vente']?>">voir plus</a>
                             </div>
                             <?php
                         }
