@@ -31,6 +31,7 @@ if(isset($_POST['submit'])){
    //si la connexion est réussie on renvoie vers la page d'accueil
    if($select_user->rowCount() > 0){
       $_SESSION['user_id'] = $row['id_users'];
+       $_SESSION['role_id'] = $row['id_role'];
       header('location:index.php');
    }else{
       //sinon on affiche un message d'erreur
