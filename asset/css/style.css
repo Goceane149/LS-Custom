@@ -152,6 +152,7 @@ h1{
 
 body{
     font-family: 'Roboto', sans-serif !important;
+    background-color: #393333;
 }
 h1{
     font-size: 17px!important;
@@ -242,6 +243,39 @@ h1{
     padding: 3rem;
     text-align: left;;
 }
+
+.vente_publiées .box-container {
+    color:var(--noir);
+    padding: 3rem 0;
+    max-width: 1920px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,100rem);
+    align-items: flex-start;
+    gap: 5rem;
+    justify-content: center;
+}
+
+
+.vente_publiées .box-container img{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: .5rem;
+}
+
+
+.vente_publiées .box-container .boxv{
+    border-radius: .5rem;
+    max-height:  100rem;
+    background-color: var(--blanc);
+    box-shadow: var(--box-shadow);
+    border: var(--borderblack);
+    padding: 3rem;
+    text-align: left;;
+}
+
+
+
 #articlev {
     text-align: left !important;
     font-family: 'Alfa Slab One', cursive;
@@ -267,6 +301,10 @@ h1{
 #actu{
     background-color: #393333;
 }
+#vente{
+    background-color: #ffffff;
+}
+
 #vente2{
     background-color: #393333;
 }
@@ -372,9 +410,11 @@ footer a {
     text-align: center;
 }
 
-
-
-
+.photo-container {
+    width: 40%; /* Ajustez cette valeur en fonction de vos besoins */
+    overflow-x: scroll;
+    white-space: nowrap;
+}
 
 
 
