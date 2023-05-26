@@ -1,21 +1,6 @@
 
-<?php
-$id_role = $BDD->query('SELECT id_role FROM `role`');
-?>
+
 <header class="header">
-    <?php
-    //fonction d'affichage des différents messages(login, ajout au panier, informations diverses etc...)
-    if (isset($message)) {
-        foreach ($message as $message) {
-            echo '
-            <div class="message">
-               <span>' . $message . '</span>
-               <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-            </div>
-            ';
-        }
-    }
-    ?>
     <section class="flex">
         <a href="index.php" class="logo">
             <img src="asset/img/logo.png" alt="">
@@ -51,9 +36,20 @@ $id_role = $BDD->query('SELECT id_role FROM `role`');
                 <p class="text-center"><span><?= $fetch_profile["Prenom"]; ?> <?= $fetch_profile["Nom"];?></span></p>
                 <!-- s'affichent alors les boutons de modification et de déconnexion -->
                 <a href="modifier.php" class="option-btn">Modifier</a>
-                <a href="deconnexion.php" class="delete-btn" onclick="return confirm('Voulez-vous vous déconnecter ?');">Se déconnecter</a>
+
                 <?php
-            } else {
+
+                if ($fetch_profile["id_role"] == 2) { ?>
+            <a href="/admin/dashboard.php" class="option-btn">Espace Employe</a>
+            <?php }
+                if ($fetch_profile["id_role"] == 3) { ?>
+                    <a href="/admin/dashboard.php" class="option-btn">Espace Employe</a>
+                <?php }
+                if ($fetch_profile["id_role"] == 4) { ?>
+                    <a href="/admin/dashboard.php" class="option-btn">Espace Patron</a>
+               <?php } ?>
+                <a href="deconnexion.php" class="option-btn" onclick="return confirm('Voulez-vous vous déconnecter ?');">Se déconnecter</a>
+            <?php } else {
                 ?>
                 <!-- sinon si la personne n'est pas connectée, on affiche ce message -->
                 <p>Veuiller d'abord vous connecter !</p>
