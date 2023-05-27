@@ -11,6 +11,7 @@ if (isset($_SESSION['user_id'])) {
     $user_id = '';
 };
 
+
 $SelectArticle = $BDD->query( 'SELECT *  FROM article ORDER BY id_article DESC Limit 4');
 $Selectvente = $BDD->query( 'SELECT *  FROM vente ORDER BY Id_Vente DESC Limit 8');
 
@@ -90,7 +91,7 @@ include ('asset/Component/Header.php');
                                         <div class="titrea mb-2"><?=$vente['prix_vente']?>$</div>
                                     </div>
                                 </div>
-                                <a id="articlev2" href="afficher_article.php?id_article=<?=$vente['Id_Vente']?>">voir plus</a>
+                                <a id="articlev2" href="afficher_vente.php?Id_Vente=<?=$vente['Id_Vente']?>">voir plus</a>
                             </div>
                             <?php
                         }
