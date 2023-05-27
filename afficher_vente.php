@@ -49,26 +49,14 @@ function checkInput($data) {
 include ('asset/Component/Header.php');
 ?>
 <div class="vente2">
-<section class="vente_publiées text-white">
-<div class="box-container">
+<section class="vente_publiéesv text-white">
+<div class="box-containerv">
         <div class="boxv">
             <?php
             foreach ($photos as $photo) {
             echo '<img src="asset/img/vente/' . $photo['url'] . '" alt="Photo du véhicule">';
             }
             ?>
-                    <div class="titrea mb-2">Nom: <?=$vente['modele'] ?></div>
-                    <div class="titrea mb-2">Place: <?=$vente['place'] ?></div>
-                    <div class="titrea mb-2">Coffre: <?=$vente['Coffre'] ?></div>
-                    <div class="titrea mb-2">Autre: <?=$vente['autre'] ?></div>
-            <div class="row">
-                <div class="col">
-                    <img src="asset/img/logo.png">
-                </div>
-                <div class="col text-end">
-                    <div class="prixvente mb-4"> <?=$vente['prix_vente'] ?>$</div>
-                </div>
-            </div>
         </div>
 </div>
 </section>
