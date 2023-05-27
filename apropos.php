@@ -47,7 +47,7 @@ include ('asset/Component/Header.php');
         <div class="row">
             <div class="col">
                 <section class="articles_publiéesa ">
-                    <h1 class="titre text-center mt-4">Prix Réparation</h1>
+                    <h1 class="titre text-center mt-4">Prix Carte Fidélité</h1>
                     <hr class="dark mx-auto">
                     <div class="box-containera">
                         <div class="boxa">
@@ -74,44 +74,64 @@ include ('asset/Component/Header.php');
                             </div>
                     </div>
                 </section>
-            </div>
-        </div>
-    </div>
-</section>
+                <section class="articles_publiéesa text-white">
+                    <h1 class="titre text-center mt-4">Prix Custom</h1>
 
-<section id="actu">
-    <div class="container-fluid mb-3 ">
-        <div class="row">
-            <div class="col">
-                <section class="articles_publiées text-white">
-                    <h1 class="titre text-center mt-4">Les Dernières Ventes</h1>
                     <hr class="white mx-auto">
-                    <div class="box-container">
-                        <?php
-                        while($vente = $Selectvente->fetch()){
-                            ?>
-                            <div class="box">
-                                <img src="asset/img/vente/<?= $vente['photo']?>" alt="">
-                                <div class="row">
-                                    <div class="col">
-                                <div class="titrea mb-2"><?=$vente['modele'] ?></div>
-                                    </div>
-                                    <div class="col text-end">
-                                        <div class="titrea mb-2"><?=$vente['prix_vente']?>$</div>
-                                    </div>
-                                </div>
-                                <a id="articlev2" href="afficher_article.php?id_article=<?=$vente['Id_Vente']?>">voir plus</a>
-                            </div>
-                            <?php
-                        }
-                        ?>
+                    <div class="box-containera">
+                        <div class="boxa">
+                            <img src="asset/img/moto.png" alt="">
+                            <p class="text-center my-auto">200$/pieces</p>
+                        </div>
+                        <div class="boxa">
+                            <img src="asset/img/compact.png" alt="">
+                            <p class="text-center my-auto">300$/pieces</p>
+                        </div>
+                        <div class="boxa">
+                            <img src="asset/img/COUPE.png" alt="">
+                            <p class="text-center my-auto">400$/pieces</p>
+                        </div>
+                        <div class="boxa">
+                            <img src="asset/img/entreprise.png" alt="">
+                            <p class="text-center my-auto">400$/pieces</p>
+                        </div>
+                        <div class="boxa">
+                            <img src="asset/img/muscle.png" alt="">
+                            <p class="text-center my-auto">500$/pieces</p>
+                        </div>
+                        <div class="boxa">
+                            <img src="asset/img/offroad.png" alt="">
+                            <p class="text-center my-auto">500$/pieces</p>
+                        </div>
+                        <div class="boxa">
+                            <img src="asset/img/berline.png" alt="">
+                            <p class="text-center my-auto">500$/pieces</p>
+                        </div>
+                        <div class="boxa">
+                            <img src="asset/img/vans.png" alt="">
+                            <p class="text-center my-auto">600$/pieces</p>
+                        </div><div class="boxa">
+                            <img src="asset/img/suv.png" alt="">
+                            <p class="text-center my-auto">800$/pieces</p>
+                        </div>
+                        <div class="boxa">
+                            <img src="asset/img/sport.png" alt="">
+                            <p class="text-center my-auto">1 000$/pieces</p>
+                        </div>
+                        <div class="boxa">
+                            <img src="asset/img/import.png" alt="">
+                            <p class="text-center my-auto">1 500$/pieces</p>
+                        </div>
+                        <div class="boxa">
+                            <img src="asset/img/supersport.png" alt="">
+                            <p class="text-center my-auto">3 000$/pieces</p>
+                        </div>
                     </div>
                 </section>
             </div>
         </div>
     </div>
 </section>
-
 
 
 <?php
