@@ -32,7 +32,7 @@ $Selectvente = $BDD->query( 'SELECT *  FROM vente ORDER BY Id_Vente DESC Limit 8
 <?php
 include ('asset/Component/Header.php');
 ?>
-<section id="cousolre">
+<section id="accueil">
     <img src="asset/img/background1.png" class="d-block w-100 " alt="equipe1">
 </section>
 
@@ -41,7 +41,7 @@ include ('asset/Component/Header.php');
         <div class="row">
             <div class="col">
                 <section class="articles_publiéesa text-white">
-                    <h1 class="titre text-center mt-4">Quelques Actualité du Club</h1>
+                    <h1 class="titre text-center mt-4">Quelques Actualité du LS-Custom</h1>
                     <hr class="white mx-auto">
                     <div class="box-containera">
                         <?php

@@ -29,10 +29,8 @@ if (isset($_POST['submit'])) {
     $message = htmlspecialchars($message);
 
     //si tout est correct on insère les données dans la BDD
-    $insert_contact = $BDD->prepare("INSERT INTO `contact`(nom, prenom, telephone, object , message) VALUES(?,?,?,?,?)");
-    $insert_contact->execute([$nom, $prenom, $telephone, $object, $message]);
-    $message[] = 'votre message a était envoyé aux patron !';
-
+    $insert_contact = $BDD->prepare("INSERT INTO `contact`(nom, prenom, telephone, object , message, id_users) VALUES(?,?,?,?,?,?)");
+    $insert_contact->execute([$nom, $prenom, $telephone, $object, $message, $_SESSION['user_id']]);
 
 }
 

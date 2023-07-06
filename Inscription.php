@@ -28,10 +28,11 @@ if (isset($_POST['submit'])) {
    $password = htmlspecialchars($password);
    $cpassword = sha1($_POST['cpassword']);
    $cpassword = htmlspecialchars($cpassword);
+   $photo = "photodebase.png";
    $role = 1;
 
    //connexion à la table 'users' dans la BDD
-   $select_user = $BDD->prepare("SELECT * FROM `users` WHERE email = ?");
+   $select_user = $BDD->prepare("SELECT * FROM `users` WHERE Email = ?");
    $select_user->execute([$email]);
    $row = $select_user->fetch(PDO::FETCH_ASSOC);
 
@@ -44,8 +45,8 @@ if (isset($_POST['submit'])) {
          $message[] = 'Les mots de passe ne correspondent pas !';
       } else {
          //si tout est correct on insère les données dans la BDD
-         $insert_user = $BDD->prepare("INSERT INTO `users`(Nom, Prenom, Email, mdp , id_role) VALUES(?,?,?,?,?)");
-         $insert_user->execute([$nom, $prenom, $email, $cpassword, $role]);
+         $insert_user = $BDD->prepare("INSERT INTO `users`( photousers, Nom, Prenom, Email, mdp , id_role) VALUES(?,?,?,?,?,?)");
+         $insert_user->execute([ $photo, $nom, $prenom, $email, $cpassword, $role]);
          $message[] = 'Inscription réussie, veuillez vous connecter !';
       }
    }

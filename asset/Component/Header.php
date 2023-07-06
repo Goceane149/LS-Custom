@@ -30,7 +30,7 @@
                 $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
                 ?>
                 <div class="d-flex justify-content-center">
-                    <img class="rounded-circle d-block w-50"  src="asset/img/utilisateur/<?=$fetch_profile['imgprofil']?>">
+                    <img class="rounded-circle d-block w-50"  src="asset/img/utilisateur/<?=$fetch_profile['photousers']?>">
                 </div>
                 <!-- on affiche le pseudo de l'utilisateur connecté -->
                 <p class="text-center"><span><?= $fetch_profile["Prenom"]; ?> <?= $fetch_profile["Nom"];?></span></p>
@@ -40,13 +40,13 @@
                 <?php
 
                 if ($fetch_profile["id_role"] == 2) { ?>
-            <a href="/admin/dashboard.php" class="option-btn">Espace Employe</a>
+            <a href="dashboard/" class="option-btn">Espace Employe</a>
             <?php }
                 if ($fetch_profile["id_role"] == 3) { ?>
-                    <a href="/admin/dashboard.php" class="option-btn">Espace Employe</a>
+                    <a href="dashboard/" class="option-btn">Espace Employe</a>
                 <?php }
                 if ($fetch_profile["id_role"] == 4) { ?>
-                    <a href="/admin/dashboard.php" class="option-btn">Espace Patron</a>
+                    <a href="dashboard/" class="option-btn">Espace Patron</a>
                <?php } ?>
                 <a href="deconnexion.php" class="option-btn" onclick="return confirm('Voulez-vous vous déconnecter ?');">Se déconnecter</a>
             <?php } else {

@@ -51,7 +51,7 @@ h1{
 
 .header .flex .logo span{
     font-size: 2.2rem;
-    color: var(--white);
+    color: var(--black);
 }
 
 .header .flex .navbar a{
@@ -417,6 +417,36 @@ footer a {
 }
 
 
+.gallery img{
+    padding: 10px;
+    width: calc(1920px/5)!important;
+    height: calc(1080px/5)!important;
+
+}
+.gallery{
+    border: 10px groove rgba(0, 0, 0, 0.575);
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.424);
+    display: grid !important;
+}
+
+button{
+    border: 2.5px solid black;
+    background-color: white;
+    color: black;
+    font-size: 22px;
+    font-family: consolas;
+    width: 150px;
+    height: 45px;
+    position: relative;
+    top: 50px;
+    left: 600px;
+    transition-duration: .2s;
+}
+button:hover{
+    background-color: black;
+    color: white;
+    transition-duration: .2s;
+}
 
 
 @media (max-width:768px){

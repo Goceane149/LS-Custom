@@ -11,8 +11,8 @@ if (isset($_SESSION['user_id'])) {
     $user_id = '';
 };
 
-$Selectgalerie = $BDD->query( 'SELECT *  FROM galerie where id_galerie > 1');
-$galerie1 = $BDD->query('SELECT *  FROM galerie where id_galerie = 1');
+$Selectgalerie = $BDD->query( 'SELECT *  FROM galerie ORDER BY  Id_Galerie desc');
+$galerie1 = $BDD->query('SELECT *  FROM galerie where Id_Galerie = 1');
 $Affichergalerie= $galerie1->fetch();
 ?>
 
@@ -24,6 +24,7 @@ $Affichergalerie= $galerie1->fetch();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/lightbox.min.css">
     <link rel="shortcut icon" type="image/png" href="assets/design/favicon.png" />
     <title>LS Custom - Galerie</title>
 </head>
@@ -31,33 +32,34 @@ $Affichergalerie= $galerie1->fetch();
 <?php
 include ('asset/Component/Header.php');
 ?>
-
-<section id="vente">
-    <img src="asset/img/galerie/<?= $Affichergalerie['photo']?>"   class="d-block"  alt="">
+<section id="galerie">
+    <img src="asset/img/background4.png" class="d-block w-100 " alt="equipe1">
 </section>
-
-<section class="articles_publiées text-white">
-    <div class="box-container">
-        <?php
+<section id="actu">
+    <div class="container-fluid mb-3">
+        <div class="row">
+            <div class="col">
+                <section class="articles_publiéesa text-white">
+                    <h1 class="titre text-center mt-4">Quelques images</h1>
+                    <hr class="white mx-auto">
+                    <div class="box-containera">
+                    <?php
         while($galerie = $Selectgalerie->fetch()){
             ?>
-            <div class="boxa">
-                <img src="asset/img/galerie/<?= $galerie['photo']?>"   class="d-block w-100"  alt="">
-            </div>
+                <a href="asset/img/gallery/<?= $galerie['photo']?>" data-lightbox="mygallery"><img src="asset/img/gallery/<?= $galerie['photo']?>"   class="d-block 100"  alt=""></A>
+                
             <?php
+           
         }
         ?>
+                    </div>
+                </section>
+            </div>
+        </div>
     </div>
 </section>
 
-
-
-
-
-
-<?php
-include ('asset/Component/Footer.php');
-?>
 <script src="asset/JS/Burger.js"></script>
+<script src="asset/JS/lightbox-plus-jquery.min.js"></script>
 </body>
 </html>
